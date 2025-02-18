@@ -27,6 +27,14 @@ public class RangeWeaponHandler : WeaponHandler
     
     [SerializeField] private Color projectileColor;
     public Color ProjectileColor {get{return projectileColor;}}
+    
+    private ProjectileManager projectileManager;
+
+    protected override void Start() // 투사체 발사, 충돌 처리
+    {
+        base.Start();
+        projectileManager = ProjectileManager.Instance;
+    }
 
     public override void Attack()
     {
@@ -38,7 +46,7 @@ public class RangeWeaponHandler : WeaponHandler
         float minAngle = -(numberOfProjectilesPerShot / 2f) * projectilesAngleSpace;
 
 
-        for (int i = 0; i < numberOfProjectilesPerShot; i++)
+        for (int i = 0; i < numberOfProjectilesPerShot; i++) // 어택 각도 계산
         {
             float angle = minAngle + projectilesAngleSpace * i;
             float randomSpread = Random.Range(-spread, spread);
@@ -47,9 +55,9 @@ public class RangeWeaponHandler : WeaponHandler
         }
     }
     
-    private void CreateProjectile(Vector2 _lookDirection, float angle)
+    private void CreateProjectile(Vector2 _lookDirection, float angle) // 프로젝트 타일을 생성할 때 .
     {
-
+        projectileManager.ShootBullet(this, projectileSpawnPosition.position, RotateVector2(_lookDirection, angle));
     }
     private static Vector2 RotateVector2(Vector2 v, float degree)
     {

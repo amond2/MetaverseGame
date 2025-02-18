@@ -11,7 +11,7 @@ public class ProjectileController : MonoBehaviour
     private bool isReady;
     private Transform pivot;
     
-    private Rigidbody2D _rigidbody;
+    private Rigidbody2D rigidbody;
     private SpriteRenderer spriteRenderer;
 
     public bool fxOnDestory = true;
@@ -19,7 +19,7 @@ public class ProjectileController : MonoBehaviour
     private void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        _rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody = GetComponent<Rigidbody2D>();
         pivot = transform.GetChild(0);
     }
 
@@ -27,7 +27,7 @@ public class ProjectileController : MonoBehaviour
     {
         if (!isReady) 
         { 
-            return;
+            return; 
         }
 
         currentDuration += Time.deltaTime;
@@ -37,7 +37,7 @@ public class ProjectileController : MonoBehaviour
             DestroyProjectile(transform.position, false);
         }
 
-        _rigidbody.velocity = direction * rangeWeaponHandler.Speed;
+        rigidbody.velocity = direction * rangeWeaponHandler.Speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -1,4 +1,4 @@
-]using UnityEngine;
+using UnityEngine;
 
 public class ProjectileManager : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class ProjectileManager : MonoBehaviour
         GameObject origin = projectilePrefabs[rangeWeaponHandler.BulletIndex];
         GameObject obj = Instantiate(origin,startPostiion,Quaternion.identity);
         
-        ProjectileController projectileController = obj.GetComponent<ProjectileController>();
+        ProjectileController projectileController = obj.GetComponent<ProjectileController>(); // ProjectileController 생성
         projectileController.Init(direction, rangeWeaponHandler);
     }
 
