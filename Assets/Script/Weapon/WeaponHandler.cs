@@ -57,7 +57,7 @@ public class WeaponHandler : MonoBehaviour
         AttackAnimation();
     }
 
-    public void AttackAnimation()
+    public void AttackAnimation() // 어택 모션
     {
         animator.SetTrigger(IsAttack);
     }
