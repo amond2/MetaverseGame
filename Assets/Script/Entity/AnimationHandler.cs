@@ -5,8 +5,8 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour
 {
     // 애니메이터를 숫자열로 비교하여 쓰기위해 변환 작업. 고유한 숫자인 해시로 변환.
-    private static readonly int IsMoving = Animator.StringToHash("IsMove");
-    private static readonly int IsDamage = Animator.StringToHash("IsDamage");
+    private static readonly int IsMoving = Animator.StringToHash("isMove");
+    private static readonly int IsDamage = Animator.StringToHash("isDamage");
 
     protected Animator animator;
 

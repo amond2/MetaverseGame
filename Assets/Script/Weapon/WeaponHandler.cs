@@ -30,7 +30,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private float knockbackTime = 0.5f;
     public float KnockbackTime { get => knockbackTime; set => knockbackTime = value; }
     
-    private static readonly int IsAttack = Animator.StringToHash("IsAttack");
+    private static readonly int IsAttack = Animator.StringToHash("isAttack");
     
     public BaseController Controller { get; private set; }
     
