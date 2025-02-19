@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerController : BaseController
 {
     private Camera camera;
+    private GameManager gameManager;
 
-    protected override void Start()
+    public void Init(GameManager gameManager) // 스타트를 init으로 바꾸면서 게임메니저가 초기화를 시키면서 관리
     {
-        base.Start();
+        this.gameManager = gameManager;
         camera = Camera.main;
     }
 
