@@ -63,9 +63,9 @@ public class ResourceController : MonoBehaviour
         return true;
     }
 
-    private void Death()
+    private void Death() // 실제로 사망 판정하는 곳은 여기
     {
-
+        baseController.Death();
     }
 
 }

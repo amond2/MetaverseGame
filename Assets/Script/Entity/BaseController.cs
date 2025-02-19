@@ -126,4 +126,23 @@ public class BaseController : MonoBehaviour
             weaponHandler?.Attack();
     }
     
+    //사망 추가
+    public virtual void Death()
+    {
+        rigidbody.velocity = Vector3.zero;
+
+        foreach (SpriteRenderer renderer in transform.GetComponentsInChildren<SpriteRenderer>()) // 캐릭터가 모든 스프라이트 찾기, 컬러 변경
+        {
+            Color color = renderer.color;
+            color.a = 0.3f;
+            renderer.color = color;
+        }
+
+        foreach (Behaviour component in transform.GetComponentsInChildren<Behaviour>()) // 컴포넌트들이 동작하지 않도록 비활성화
+        {
+            component.enabled = false; 
+        }
+
+        Destroy(gameObject, 2f); // 게임 오브젝트를 2초뒤 삭제
+    }
 }

@@ -60,4 +60,9 @@ public class EnemyController : BaseController
         return (target.position - transform.position).normalized;
     }
     
+    public override void Death() // 적 사망 추가 
+    {
+        base.Death();
+    }
+    
 }

@@ -35,4 +35,11 @@ public class PlayerController : BaseController
         isAttacking = Input.GetMouseButton(0); // 무기 장착 - 마우스 누르는 동안 어택
         
     }
+    
+    public override void Death() // 플레이어 사망 추가
+    {
+        base.Death();
+        gameManager.GameOver();
+    }
+    
 }
