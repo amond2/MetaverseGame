@@ -85,6 +85,7 @@ public class EnemyManager : MonoBehaviour // 적 생성 코드
         // 적 생성 및 리스트에 추가
         GameObject spawnedEnemy = Instantiate(randomPrefab, new Vector3(randomPosition.x, randomPosition.y), Quaternion.identity);
         EnemyController enemyController = spawnedEnemy.GetComponent<EnemyController>();
+        enemyController.Init(this, gameManager.player.transform); // 타겟과 적메니저 가져옴
 
         activeEnemies.Add(enemyController);
     }
@@ -103,5 +104,10 @@ public class EnemyManager : MonoBehaviour // 적 생성 코드
         }
     }
 
-    
+    public void RemoveEnemyOnDeath(EnemyController enemy)
+    {
+        activeEnemies.Remove(enemy);
+        if (enemySpawnComplite && activeEnemies.Count == 0) // 소환된 적을 모두 잡으면 웨이브 끝
+            gameManager.EndOfWave();
+    }
 }
