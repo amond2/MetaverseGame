@@ -53,6 +53,7 @@ public class EnemyManager : MonoBehaviour // 적 생성 코드
     {
         enemySpawnComplite = false;
         yield return new WaitForSeconds(timeBetweenWaves); // 웨이브 시작하면 일정 시간 대기
+        
         for (int i = 0; i < waveCount; i++)
         {
             yield return new WaitForSeconds(timeBetweenSpawns); // 일정시간 대기 동안 몬스터 생성 (계속 순환)

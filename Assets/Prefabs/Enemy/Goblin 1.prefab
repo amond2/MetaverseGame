@@ -116,14 +116,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2798567046942076138}
   - component: {fileID: 4746792630196994668}
-  - component: {fileID: 4526475952629624329}
   - component: {fileID: 8295320528369843044}
   - component: {fileID: -8180385859390589636}
   - component: {fileID: 1440569232390385890}
   - component: {fileID: 6656494320691541795}
   - component: {fileID: 5866301568720237713}
   m_Layer: 7
-  m_Name: Goblin
+  m_Name: Goblin 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,41 +172,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &4526475952629624329
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6658737939425492646}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: -0.2}
-  serializedVersion: 2
-  m_Radius: 0.3
 --- !u!61 &8295320528369843044
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -306,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 5884735630680003688}
   weaponPivot: {fileID: 2732469805237190310}
-  WeaponPrefab: {fileID: 0}
+  WeaponPrefab: {fileID: 8966216096440727263, guid: 325c843043d0a4b459feef52df4b5ae4, type: 3}
   followRange: 15
 --- !u!1 &8838832339572353863
 GameObject:
