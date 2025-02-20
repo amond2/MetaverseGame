@@ -18,7 +18,11 @@ public class GameManager : MonoBehaviour
         player.Init(this);
 
         enemyManager = GetComponentInChildren<EnemyManager>();
-        enemyManager.Init(this);
+
+        if (enemyManager != null) // 임시 구분
+        {
+            enemyManager.Init(this);
+        }
     }
 
     public void StartGame()
@@ -44,9 +48,10 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     StartGame();
-        // }
+        if (Input.GetMouseButtonDown(0)) // 임시 구분, 마우스 죄클릭시 스테이지 업뎃 됨.
+        {
+            StartGame();
+        }
+        
     }
 }
