@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // 임시 구분, 마우스 죄클릭시 스테이지 업뎃 됨.
+        if (Input.GetKeyDown(KeyCode.P)) // 임시 구분
         {
             StartGame();
         }
