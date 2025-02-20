@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class PortalController : MonoBehaviour
 {
+    // 전환할 씬 지정 가능
+    [SerializeField] private string targetSceneName = "";
+    
     // 플레이어가 포탈 영역 안에 있는지 여부를 저장할 변수
     private bool playerInPortal = false;
 
@@ -12,6 +15,7 @@ public class PortalController : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             playerInPortal = true;
+            Debug.Log("Player entered portal");
         }
     }
 
@@ -21,6 +25,7 @@ public class PortalController : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             playerInPortal = false;
+            Debug.Log("Player exited portal");
         }
     }
 
@@ -30,9 +35,9 @@ public class PortalController : MonoBehaviour
         // 플레이어가 포탈 안에 있고, 스페이스바를 누른 경우
         if (playerInPortal && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("(디버깅) 포탈에 들어갑니다");
-            // // 전환할 씬의 이름 또는 빌드 인덱스를 넣습니다.
-            // SceneManager.LoadScene("NextSceneName");
+            // 전환할 씬을 로드
+            SceneManager.LoadScene(targetSceneName);
+            Debug.Log("Player moved other Scene");
         }
     }
 }

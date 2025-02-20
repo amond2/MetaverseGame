@@ -3697,6 +3697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Potal
       objectReference: {fileID: 0}
+    - target: {fileID: 1174205710821374433, guid: 5354b181ec14a47229e9dbfef38be444, type: 3}
+      propertyPath: targetSceneName
+      value: HomeScene
+      objectReference: {fileID: 0}
     - target: {fileID: 2829504905547611418, guid: 5354b181ec14a47229e9dbfef38be444, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
